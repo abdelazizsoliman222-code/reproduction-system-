@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Reproduction System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <h1>Reproduction System</h1>
+
+    <div id="images-container">
+        <img id="female-img" src="female reproductive system.jpg" alt="female" style="display:none;">
+        <img id="male-img" src="male-reproductive-system.jpg" alt="male" style="display:none;">
+    </div>
+
+    <div id="info-container"></div>
+
+    <footer>
+        <p>by Abdelaziz soliman</p>
+    </footer>
+
+    <script>
+        let gender = prompt("Please enter your gender (male/female):");
+        if (gender) {
+            gender = gender.toLowerCase();
+            let infoContainer = document.getElementById("info-container");
+
+            if (gender === "male") {
+                document.getElementById("male-img").style.display = "block";
+                infoContainer.innerHTML = `
+                    <h2>Male Reproductive System Functions</h2>
+                    <ul>
+                        <li><b>Testes:</b> Produce sperm and testosterone.</li>
+                        <li><b>Epididymis:</b> Stores sperm until maturity.</li>
+                        <li><b>Vas deferens:</b> Transports sperm to urethra.</li>
+                        <li><b>Prostate gland:</b> Produces fluid that nourishes sperm.</li>
+                        <li><b>Urethra:</b> Conducts urine and semen outside the body.</li>
+                        <li><b>Penis:</b> Delivers sperm into the female reproductive system.</li>
+                    </ul>
+                `;
+            } else if (gender === "female") {
+                document.getElementById("female-img").style.display = "block";
+                infoContainer.innerHTML = `
+                    <h2>Female Reproductive System Functions</h2>
+                    <ul>
+                        <li><b>Ovaries:</b> Produce eggs and hormones (estrogen, progesterone).</li>
+                        <li><b>Fallopian tubes:</b> Transport eggs from ovaries to uterus.</li>
+                        <li><b>Uterus:</b> Supports development of a fetus.</li>
+                        <li><b>Cervix:</b> Connects uterus to vagina, allows passage of sperm and childbirth.</li>
+                        <li><b>Vagina:</b> Receives sperm and serves as birth canal.</li>
+                        <li><b>Vulva:</b> External female genital organs.</li>
+                    </ul>
+                `;
+            } else {
+                alert("Please refresh the page and type 'male' or 'female'.");
+            }
+        }
+    </script>
+
+</body>
+</html>
